@@ -8,6 +8,21 @@
 
 NoOptionalInterpolation make "Optional(...)" no longer be printed out in Swift string interpolation.
 
+Example:
+
+```swift
+let n:Int? = 1
+let t:String? = nil
+let s:String? = "string"
+let o:String?? = "optional string"
+
+let i = "\(n) \(t) \(s) \(o)"
+print(i)
+```
+
+Without NoOptionalInterpolation: `Optional(1) nil Optional("string") Optional(Optional("optional string"))`.
+With NoOptionalInterpolation: `1  string optional string`.
+
 ## Installation
 
 NoOptionalInterpolation is available through [CocoaPods](http://cocoapods.org). To install
