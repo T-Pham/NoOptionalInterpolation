@@ -17,7 +17,7 @@ extension Optional: Unwrappable {
             return nil
         case .Some(let unwrappable as Unwrappable):
             return unwrappable.unwrap()
-        case .Some (let some):
+        case .Some(let some):
             return some
         }
     }
