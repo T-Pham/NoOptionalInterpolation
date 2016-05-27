@@ -17,14 +17,18 @@ extension Optional: Unwrappable {
             return nil
         case .Some(let unwrappable as Unwrappable):
             return unwrappable.unwrap()
-        case .Some(let some):
-            return some
+        case .Some(let any):
+            return any
         }
     }
 }
 
 public extension String {
     init(stringInterpolationSegment expr: Unwrappable) {
-        self = String(expr.unwrap() ?? "")
+        if let unwrapped = expr.unwrap() {
+            self.init(stringInterpolationSegment: unwrapped)
+        } else {
+            self.init()
+        }
     }
 }

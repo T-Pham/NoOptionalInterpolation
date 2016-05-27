@@ -14,7 +14,7 @@ Example:
 let n:Int? = 1
 let t:String? = nil
 let s:String? = "string"
-let o:String?? = "optional string"
+let o:String?? = "nested optionals"
 
 let i = "\(n) \(t) \(s) \(o)"
 print(i)
@@ -22,12 +22,12 @@ print(i)
 
 Without NoOptionalInterpolation:
 ```
-Optional(1) nil Optional("string") Optional(Optional("optional string"))
+Optional(1) nil Optional("string") Optional(Optional("nested optionals"))
 ```
 
 With NoOptionalInterpolation:
 ```
-1  string optional string
+1  string nested optionals
 ```
 
 ## Installation
