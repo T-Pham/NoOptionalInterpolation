@@ -1,0 +1,6 @@
+use_frameworks!
+target 'NoOptionalInterpolation_Tests' do
+  pod 'NoOptionalInterpolation', :path => '../'
+  
+  
+end
