@@ -6,7 +6,7 @@
 
 ## Description
 
-NoOptionalInterpolation make "Optional(...)" no longer be printed out in Swift string interpolation.
+NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation.
 
 Example:
 
@@ -20,8 +20,15 @@ let i = "\(n) \(t) \(s) \(o)"
 print(i)
 ```
 
-Without NoOptionalInterpolation: `Optional(1) nil Optional("string") Optional(Optional("optional string"))`.
-With NoOptionalInterpolation: `1  string optional string`.
+Without NoOptionalInterpolation:
+```
+Optional(1) nil Optional("string") Optional(Optional("optional string"))
+```
+
+With NoOptionalInterpolation:
+```
+1  string optional string
+```
 
 ## Installation
 
@@ -32,7 +39,10 @@ it, simply add the following line to your Podfile:
 pod "NoOptionalInterpolation"
 ```
 
-Then add `@import NoOptionalInterpolation;` to your project's `Bridging-Header.h` file.
+and the following line to your project's Bridging-Header.h file:
+```objective-c
+@import NoOptionalInterpolation;
+```
 
 ## License
 
