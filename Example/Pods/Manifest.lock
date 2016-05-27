@@ -1,0 +1,16 @@
+PODS:
+  - NoOptionalInterpolation (0.1.0)
+
+DEPENDENCIES:
+  - NoOptionalInterpolation (from `../`)
+
+EXTERNAL SOURCES:
+  NoOptionalInterpolation:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NoOptionalInterpolation: 628c1762035ce3e260d58a74c3fd6ff9af47e31b
+
+PODFILE CHECKSUM: 471d8b1d58d2dcfa32fa1da922aed29485f171c7
+
+COCOAPODS: 1.0.0

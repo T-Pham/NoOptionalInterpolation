@@ -1,15 +1,12 @@
 # NoOptionalInterpolation
 
-[![CI Status](http://img.shields.io/travis/Thanh Pham/NoOptionalInterpolation.svg?style=flat)](https://travis-ci.org/Thanh Pham/NoOptionalInterpolation)
 [![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
 [![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
 [![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
 
-## Example
+## Description
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
+NoOptionalInterpolation make "Optional(...)" no longer be printed out in Swift string interpolation.
 
 ## Installation
 
@@ -20,9 +17,7 @@ it, simply add the following line to your Podfile:
 pod "NoOptionalInterpolation"
 ```
 
-## Author
-
-Thanh Pham, minhthanh@me.com
+Then add `@import NoOptionalInterpolation;` to your project's `Bridging-Header.h` file.
 
 ## License
 

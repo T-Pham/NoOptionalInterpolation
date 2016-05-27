@@ -1,0 +1,22 @@
+{
+  "name": "NoOptionalInterpolation",
+  "version": "0.1.0",
+  "summary": "A short description of NoOptionalInterpolation.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/NoOptionalInterpolation",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Thanh Pham": "minhthanh@me.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/NoOptionalInterpolation.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "NoOptionalInterpolation/Classes/**/*"
+}
