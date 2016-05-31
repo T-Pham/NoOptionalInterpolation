@@ -1,16 +1,22 @@
 PODS:
-  - NoOptionalInterpolation (0.1.0)
+  - Nimble (3.2.0)
+  - NoOptionalInterpolation (0.2.0)
+  - Quick (0.9.2)
 
 DEPENDENCIES:
+  - Nimble (~> 3.0)
   - NoOptionalInterpolation (from `../`)
+  - Quick (~> 0.8)
 
 EXTERNAL SOURCES:
   NoOptionalInterpolation:
     :path: ../
 
 SPEC CHECKSUMS:
-  NoOptionalInterpolation: 628c1762035ce3e260d58a74c3fd6ff9af47e31b
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
+  NoOptionalInterpolation: c3ee7098be71581227cf76185c8d4d2495e266bd
+  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
-PODFILE CHECKSUM: 471d8b1d58d2dcfa32fa1da922aed29485f171c7
+PODFILE CHECKSUM: 34995bf5879527d54dd511920b44f0dadc37b84b
 
 COCOAPODS: 1.0.0

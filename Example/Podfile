@@ -2,5 +2,6 @@ use_frameworks!
 target 'NoOptionalInterpolation_Tests' do
   pod 'NoOptionalInterpolation', :path => '../'
   
-  
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
 end

@@ -1,6 +1,0 @@
-framework module NoOptionalInterpolation {
-  umbrella header "NoOptionalInterpolation-umbrella.h"
-
-  export *
-  module * { export * }
-}

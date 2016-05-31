@@ -1,6 +1,0 @@
-framework module Pods_NoOptionalInterpolation_Tests {
-  umbrella header "Pods-NoOptionalInterpolation_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
