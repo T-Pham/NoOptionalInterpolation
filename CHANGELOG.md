@@ -6,3 +6,6 @@ Construct string using constructor chaining
 
 # v0.3.0
 Add tests
+
+# v1.0.0
+Update to Swift 2 syntax
