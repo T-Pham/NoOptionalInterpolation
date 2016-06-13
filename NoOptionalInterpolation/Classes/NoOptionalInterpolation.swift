@@ -13,11 +13,11 @@ public protocol Unwrappable {
 extension Optional: Unwrappable {
     public func unwrap() -> Any? {
         switch self {
-        case .None:
+        case nil:
             return nil
-        case .Some(let unwrappable as Unwrappable):
+        case let unwrappable as Unwrappable:
             return unwrappable.unwrap()
-        case .Some(let any):
+        case let any:
             return any
         }
     }
