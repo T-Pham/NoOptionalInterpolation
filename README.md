@@ -35,16 +35,21 @@ Also, please note that this does not affect the `print` function. Hence, `print(
 
 ## Installation
 
-NoOptionalInterpolation is available through [CocoaPods](http://cocoapods.org). To install
+NoOptionalInterpolation is available through [CocoaPods](http://cocoapods.org/pods/NoOptionalInterpolation). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod "NoOptionalInterpolation"
 ```
 
-and the following line to your project's Bridging-Header.h file:
+If you want NoOptionalInterpolation to be imported to the whole project, add the following line to your project's Bridging-Header.h file:
 ```objective-c
 @import NoOptionalInterpolation;
+```
+
+In case you want to limit the affect of NoOptionalInterpolation within some specific Swift files only, add the line below instead, to the Swift files you want NoOptionalInterpolation to have affect on:
+```swift
+import NoOptionalInterpolation
 ```
 
 ## License
