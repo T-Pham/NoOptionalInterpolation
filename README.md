@@ -88,4 +88,4 @@ pod 'NoOptionalInterpolation', '~> 0.3'
 
 ## License
 
-NoOptionalInterpolation is available under the MIT license. See the LICENSE file for more info.
+NoOptionalInterpolation is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
