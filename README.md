@@ -39,7 +39,7 @@ NoOptionalInterpolation is available through [CocoaPods](http://cocoapods.org/po
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "NoOptionalInterpolation"
+pod 'NoOptionalInterpolation'
 ```
 
 If you want NoOptionalInterpolation to be imported to the whole project, add the following line to your project's Bridging-Header.h file:
@@ -50,6 +50,13 @@ If you want NoOptionalInterpolation to be imported to the whole project, add the
 In case you want to limit the affect of NoOptionalInterpolation within some specific Swift files only, add the line below instead, to the Swift files you want NoOptionalInterpolation to have affect on:
 ```swift
 import NoOptionalInterpolation
+```
+
+##Compatibility
+From version 1.0.0, Swift 2 syntax is used. If your project is still using prior versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
+
+```ruby
+pod 'NoOptionalInterpolation', '~> 0.3'
 ```
 
 ## License
