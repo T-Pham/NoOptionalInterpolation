@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NoOptionalInterpolation'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Get rid of "Optional(...)" and "nil" in string interpolation.'
   s.description      = <<-DESC
 NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation.

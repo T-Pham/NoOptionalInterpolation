@@ -9,3 +9,6 @@ Add tests
 
 # v1.0.0
 Update to Swift 2 syntax
+
+# v1.0.1
+Update README
