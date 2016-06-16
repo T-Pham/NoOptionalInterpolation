@@ -58,7 +58,7 @@ With NoOptionalInterpolation:
 1  string nested optionals
 ```
 
-Also, please note that this does not affect the `print` function. Hence, `print(o)` (`o` as in the example above) would still print out `Optional(Optional("nested optionals"))`.
+Also, please note that this does not affect the `print` function. Hence, `print(o)` (as opposed to `print("\(o)")`, `o` as in the example above) would still print out `Optional(Optional("nested optionals"))`.
 
 ## Installation
 
