@@ -12,3 +12,6 @@ Update to Swift 2 syntax
 
 # v1.0.1
 Update README
+
+# v1.0.2
+Remove iOS specification
