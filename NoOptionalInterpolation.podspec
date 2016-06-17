@@ -9,5 +9,8 @@ NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Thanh Pham' => 'minhthanh@me.com' }
   s.source           = { :git => 'https://github.com/T-Pham/NoOptionalInterpolation.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '8.0'
+  s.osx.deployment_target = '10.9'
+  s.watchos.deployment_target = '2.0'
   s.source_files = 'NoOptionalInterpolation/Classes/**/*'
 end
