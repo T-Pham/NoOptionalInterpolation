@@ -34,7 +34,7 @@
 
 ## Description
 
-NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to the UI elements such as `UILabel` or `UIButton`. Since XCode currently (as of the time this is written) has no warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)".
+NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)".
 
 Example:
 
@@ -80,7 +80,7 @@ import NoOptionalInterpolation
 ```
 
 ##Compatibility
-From version 1.0.0, Swift 2 syntax is used. If your project is still using prior versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
+From version 1.0.0, Swift 2 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
 
 ```ruby
 pod 'NoOptionalInterpolation', '~> 0.3'
