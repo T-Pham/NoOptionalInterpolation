@@ -14,7 +14,10 @@ Update to Swift 2 syntax
 Update README
 
 # v1.0.2
-Remove iOS specification
+Add OS X and watchOS specifications
 
 # v1.1.0
 Add * operator to allow reverting to the default behaviour
+
+# v1.1.1
+Add tvOS specification
