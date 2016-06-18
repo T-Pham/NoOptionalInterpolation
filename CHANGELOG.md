@@ -15,3 +15,6 @@ Update README
 
 # v1.0.2
 Remove iOS specification
+
+# v1.1.0
+Add * operator to allow reverting to the default behaviour

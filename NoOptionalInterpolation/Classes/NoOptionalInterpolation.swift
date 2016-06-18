@@ -23,6 +23,20 @@ extension Optional: Unwrappable {
     }
 }
 
+public struct WrappedUnwrappable: Unwrappable {
+    let unwrappable: Unwrappable
+
+    public func unwrap() -> Any? {
+        return unwrappable
+    }
+}
+
+postfix operator * {}
+
+public postfix func *(unwrappable: Unwrappable) -> WrappedUnwrappable {
+    return WrappedUnwrappable(unwrappable: unwrappable)
+}
+
 public extension String {
     init(stringInterpolationSegment expr: Unwrappable) {
         if let unwrapped = expr.unwrap() {

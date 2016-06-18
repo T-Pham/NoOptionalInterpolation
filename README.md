@@ -36,29 +36,41 @@
 
 NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)".
 
-Example:
+The pod also provides an operator to allow you to revert back to the default behaviour for some particular `Optional`.
+
+## Usage
+
+Consider the following example:
 
 ```swift
-let n:Int? = 1
-let t:String? = nil
-let s:String? = "string"
-let o:String?? = "nested optionals"
+let n: Int? = 1
+let t: String? = nil
+let s: String? = "string1"
+let o: String?? = "string2"
 
 let i = "\(n) \(t) \(s) \(o)"
 print(i)
 ```
 
-Without NoOptionalInterpolation:
+After having installed the pod and imported the module, the code above will print out:
+
 ```
-Optional(1) nil Optional("string") Optional(Optional("nested optionals"))
+1  string1 string2
 ```
 
-With NoOptionalInterpolation:
-```
-1  string nested optionals
+To revert to the default behaviour, use the `*` operator for your `Optional`s.
+
+```swift
+let i = "\(n*) \(t*) \(s*) \(o*)"
 ```
 
-Also, please note that this does not affect the `print` function. Hence, `print(o)` (as opposed to `print("\(o)")`, `o` as in the example above) would still print out `Optional(Optional("nested optionals"))`.
+This will print out:
+
+```
+Optional(1) nil Optional("string1") Optional(Optional("string2"))
+```
+
+Also, please note that this does not affect the `print` function. Hence, `print(o)` (as opposed to `print("\(o)")`, `o` as in the example above) would still print out `Optional(Optional("string2"))`.
 
 ## Installation
 
