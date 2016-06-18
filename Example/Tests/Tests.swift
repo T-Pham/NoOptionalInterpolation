@@ -1,6 +1,6 @@
 //
-//  ArrayTests.swift
-//  NoUnderscoreS
+//  Tests.swift
+//  NoOptionalInterpolation
 //
 //  Created by Thanh Pham on 5/31/16.
 //  Copyright © 2016 CocoaPods. All rights reserved.
