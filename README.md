@@ -27,10 +27,12 @@
 
 # NoOptionalInterpolation
 
-[![CI Status](http://img.shields.io/travis/T-Pham/NoOptionalInterpolation.svg?style=flat)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
-[![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
-[![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
-[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat)](http://cocoapods.org/pods/NoOptionalInterpolation)
+[![CI Status](http://img.shields.io/travis/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
+[![GitHub issues](https://img.shields.io/github/issues/T-Pham/NoOptionalInterpolation.svg?maxAge=2592000&style=flat-square)](https://github.com/T-Pham/NoOptionalInterpolation/issues)
+[![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
+[![CocoaPods](https://img.shields.io/cocoapods/dt/NoOptionalInterpolation.svg?maxAge=2592000&style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
+[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
+[![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat-square)](LICENSE)
 
 ## Description
 
