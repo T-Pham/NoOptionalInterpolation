@@ -23,9 +23,11 @@ extension Optional: Unwrappable {
     }
 }
 
-public struct WrappedUnwrappable: Unwrappable {
+public struct WrappedUnwrappable {
     let unwrappable: Unwrappable
+}
 
+extension WrappedUnwrappable: Unwrappable {
     public func unwrap() -> Any? {
         return unwrappable
     }
@@ -45,4 +47,70 @@ public extension String {
             self.init()
         }
     }
+}
+
+public protocol Intable {
+    func int() -> Int
+}
+
+extension Int: Intable {
+    public func int() -> Int {
+        return self
+    }
+}
+
+extension Intable where Self: Unwrappable {
+    public func int() -> Int {
+        if let int = self.unwrap() as? Int {
+            return int
+        } else {
+            return 0
+        }
+    }
+}
+
+extension Optional: Intable {}
+
+public struct Word {
+    var singularForm: String
+    var pluralForm: String
+}
+
+extension Word {
+    init(singularForm aSingularForm: String) {
+        singularForm = aSingularForm
+        pluralForm = singularForm + "s"
+    }
+}
+
+extension Word: StringLiteralConvertible {
+    public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
+    public typealias UnicodeScalarLiteralType = StringLiteralType
+
+    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
+        self.init(stringLiteral: value)
+    }
+
+    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
+        self.init(stringLiteral: value)
+    }
+
+    public init(stringLiteral value: StringLiteralType) {
+        self.init(singularForm: value)
+    }
+}
+
+infix operator ~ { precedence 100 }
+
+public func ~(amount: Intable, word: Word) -> String {
+    let quantity = amount.int()
+    return String(quantity) + " " + (quantity == 1 ? word.singularForm : word.pluralForm)
+}
+
+public func ~(word: Word, amount: Intable) -> String {
+    return amount.int() == 1 ? word.singularForm : word.pluralForm
+}
+
+public func /(singularForm: String, pluralForm: String) -> Word {
+    return Word(singularForm: singularForm, pluralForm: pluralForm)
 }
