@@ -29,6 +29,7 @@
 
 [![CI Status](http://img.shields.io/travis/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
 [![GitHub issues](https://img.shields.io/github/issues/T-Pham/NoOptionalInterpolation.svg?maxAge=2592000&style=flat-square)](https://github.com/T-Pham/NoOptionalInterpolation/issues)
+[![codecov](https://codecov.io/gh/T-Pham/NoOptionalInterpolation/branch/master/graph/badge.svg)](https://codecov.io/gh/T-Pham/NoOptionalInterpolation)
 [![Code Health](https://landscape.io/github/T-Pham/NoOptionalInterpolation/master/landscape.svg?style=flat-square)](https://landscape.io/github/T-Pham/NoOptionalInterpolation/master)
 [![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/NoOptionalInterpolation.svg?maxAge=2592000&style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
