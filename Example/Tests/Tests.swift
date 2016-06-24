@@ -9,8 +9,11 @@
 import Quick
 import Nimble
 import NoOptionalInterpolation
+import Pluralize_swift
 
 import XCTest
+
+extension Pluralize: Pluralizer {}
 
 class Tests: QuickSpec {
 
@@ -102,6 +105,12 @@ class Tests: QuickSpec {
                 expect(nothing ~ string) == "0 strings"
                 expect(string ~ nothing) == "strings"
                 expect(nothing ~ nothing) == ""
+            }
+
+            it("should support custom pluralizer") {
+                pluralizer = Pluralize.self
+                expect(2 ~ "oasis") == "2 oases"
+                pluralizer = SimplePluralizer.self
             }
         }
     }

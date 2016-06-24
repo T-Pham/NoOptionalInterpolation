@@ -1,6 +1,7 @@
 use_frameworks!
 target 'NoOptionalInterpolation_Tests' do
   pod 'NoOptionalInterpolation', :path => '../'
+  pod 'Pluralize.swift', :git => "https://github.com/joshualat/Pluralize.swift.git"
   
   pod 'Quick', '~> 0.8'
   pod 'Nimble', '~> 3.0'

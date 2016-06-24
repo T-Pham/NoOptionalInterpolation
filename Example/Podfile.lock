@@ -1,22 +1,32 @@
 PODS:
   - Nimble (3.2.0)
   - NoOptionalInterpolation (1.1.1)
+  - Pluralize.swift (1.0)
   - Quick (0.9.2)
 
 DEPENDENCIES:
   - Nimble (~> 3.0)
   - NoOptionalInterpolation (from `../`)
+  - Pluralize.swift (from `https://github.com/joshualat/Pluralize.swift.git`)
   - Quick (~> 0.8)
 
 EXTERNAL SOURCES:
   NoOptionalInterpolation:
     :path: ../
+  Pluralize.swift:
+    :git: https://github.com/joshualat/Pluralize.swift.git
+
+CHECKOUT OPTIONS:
+  Pluralize.swift:
+    :commit: 400b14a8f4497c8fc94494737f7562c38db3caa3
+    :git: https://github.com/joshualat/Pluralize.swift.git
 
 SPEC CHECKSUMS:
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   NoOptionalInterpolation: 1d1d879f1d473c2341954adb51b633b6ead96756
+  Pluralize.swift: 39197053939578ca42c3034081d2887016ce5a33
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
-PODFILE CHECKSUM: 34995bf5879527d54dd511920b44f0dadc37b84b
+PODFILE CHECKSUM: 28e7062418cd612e4c0ac87eb551e3c9fd43e3a1
 
 COCOAPODS: 1.0.1

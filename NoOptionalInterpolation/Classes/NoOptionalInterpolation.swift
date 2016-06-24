@@ -81,15 +81,17 @@ public struct Word: Wordable {
     public var pluralForm: String
 }
 
-protocol Pluralizer {
+public protocol Pluralizer {
     static func apply(word: String) -> String
 }
 
-class SimplePluralizer: Pluralizer {
-    class func apply(word: String) -> String {
+public class SimplePluralizer: Pluralizer {
+    public class func apply(word: String) -> String {
         return word.characters.count == 0 ? "" : word + "s"
     }
 }
+
+public var pluralizer: Pluralizer.Type = SimplePluralizer.self
 
 extension String: Wordable {
     public var singularForm: String {
@@ -99,7 +101,7 @@ extension String: Wordable {
     }
 
     public var pluralForm: String {
-        return SimplePluralizer.apply(self)
+        return pluralizer.apply(self)
     }
 }
 
@@ -111,7 +113,7 @@ extension Wordable where Self: Unwrappable {
     }
 
     public var pluralForm: String {
-        return SimplePluralizer.apply(self.singularForm)
+        return pluralizer.apply(self.singularForm)
     }
 }
 
