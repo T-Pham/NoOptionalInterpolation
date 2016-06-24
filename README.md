@@ -38,43 +38,91 @@
 
 ## Description
 
-NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)".
+NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)". You can also revert to the default behavior when needed.
 
-The pod also provides an operator to allow you to revert back to the default behaviour for some particular `Optional`.
+Besides, the pod makes pluralizing your text easier with custom operators.
 
 ## Usage
 
-Consider the following example:
+### Remove "Optional(...)" and "nil":
+
+Just import NoOptionalInterpolation and everything is done for you.
 
 ```swift
+import NoOptionalInterpolation
+
 let n: Int? = 1
 let t: String? = nil
 let s: String? = "string1"
 let o: String?? = "string2"
 
 let i = "\(n) \(t) \(s) \(o)"
-print(i)
-```
-
-After having installed the pod and imported the module, the code above will print out:
-
-```
-1  string1 string2
-```
-
-To revert to the default behaviour, use the `*` operator for your `Optional`s.
-
-```swift
-let i = "\(n*) \(t*) \(s*) \(o*)"
-```
-
-This will print out:
-
-```
-Optional(1) nil Optional("string1") Optional(Optional("string2"))
+print(i) // 1  string1 string2
 ```
 
 Also, please note that this does not affect the `print` function. Hence, `print(o)` (as opposed to `print("\(o)")`, `o` as in the example above) would still print out `Optional(Optional("string2"))`.
+
+### Revert to the default behavior:
+
+Use the `*` operator for your `Optional`s.
+
+```swift
+...
+let i = "\(n*) \(t*) \(s*) \(o*)"
+print(i) // Optional(1) nil Optional("string1") Optional(Optional("string2"))
+```
+
+### Pluralization:
+
+Use the `~` operator to pluralize words.
+
+```swift
+let age = 42
+let text = "I am \(age ~ "year") old" // "I am 42 years old" // actually not // for now
+```
+
+Use the `/` operator to provide the plural form.
+
+```swift
+let humanCount = 42
+let text = "The team consists of \(humanCount ~ "person" / "people")" // "The team consists of 42 people"
+```
+
+To omit the quantity, swap the position of the quantity and the word.
+
+```swift
+let listener = 42
+let text = "Do it \("yourself" / "yourselves" ~ listener)" // "Do it yourselves"
+```
+
+It also works with `Optional`s.
+
+```swift
+let count: Int?? = 42
+let fruit: String?? = "apple"
+let text = "I have \(count ~ fruit)" // "I have 42 apples"
+```
+
+By default, if you don't provide a plural form using the `/` operator, an "s" is appended to your word to make the plural form. To make the pluralization smarter, you can specify a custom `PluralizerType`. You can find one [here](https://github.com/joshualat/Pluralize.swift).
+
+In your Podfile:
+
+```ruby
+pod 'Pluralize.swift', :git => "https://github.com/joshualat/Pluralize.swift.git"
+```
+
+Then:
+
+```swift
+import NoOptionalInterpolation
+import Pluralize_swift
+
+extension Pluralize: NoOptionalInterpolation.Pluralizer {}
+
+...
+NoOptionalInterpolation.PluralizerType = Pluralize.self
+assert(2 ~ "oasis" == "2 oases")
+```
 
 ## Installation
 
@@ -86,11 +134,13 @@ pod 'NoOptionalInterpolation'
 ```
 
 If you want NoOptionalInterpolation to be imported to the whole project, add the following line to your project's Bridging-Header.h file:
+
 ```objective-c
 @import NoOptionalInterpolation;
 ```
 
 In case you want to limit the affect of NoOptionalInterpolation within some specific Swift files only, add the line below instead, to the Swift files you want NoOptionalInterpolation to have affect on:
+
 ```swift
 import NoOptionalInterpolation
 ```

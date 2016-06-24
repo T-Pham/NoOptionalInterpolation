@@ -21,3 +21,6 @@ Add * operator to allow reverting to the default behaviour
 
 # v1.1.1
 Add tvOS specification
+
+# v2.0.0
+Add pluralization
