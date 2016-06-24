@@ -108,9 +108,9 @@ class Tests: QuickSpec {
             }
 
             it("should support custom pluralizer") {
-                pluralizer = Pluralize.self
+                PluralizerType = Pluralize.self
                 expect(2 ~ "oasis") == "2 oases"
-                pluralizer = SimplePluralizer.self
+                PluralizerType = SimplePluralizer.self
             }
         }
     }

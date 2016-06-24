@@ -91,7 +91,7 @@ public class SimplePluralizer: Pluralizer {
     }
 }
 
-public var pluralizer: Pluralizer.Type = SimplePluralizer.self
+public var PluralizerType: Pluralizer.Type = SimplePluralizer.self
 
 extension String: Wordable {
     public var singularForm: String {
@@ -101,7 +101,7 @@ extension String: Wordable {
     }
 
     public var pluralForm: String {
-        return pluralizer.apply(self)
+        return PluralizerType.apply(self)
     }
 }
 
@@ -113,7 +113,7 @@ extension Wordable where Self: Unwrappable {
     }
 
     public var pluralForm: String {
-        return pluralizer.apply(self.singularForm)
+        return PluralizerType.apply(self.singularForm)
     }
 }
 
