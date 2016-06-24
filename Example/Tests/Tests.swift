@@ -65,5 +65,44 @@ class Tests: QuickSpec {
                 expect("\(n*) \(t*) \(s*) \(o*)") == "Optional(1) nil Optional(\"string1\") Optional(Optional(\"string2\"))"
             }
         }
+
+        describe("Pluralization") {
+            context("with quantity") {
+                it("should pluralize word") {
+                    expect(2 ~ "string") == "2 strings"
+                }
+
+                it("should NOT pluralize word when the quantity is 1") {
+                    expect(1 ~ "string") == "1 string"
+                }
+            }
+
+            context("without quantity") {
+                it("should pluralize word") {
+                    expect("string" ~ 2) == "strings"
+                }
+
+                it("should NOT pluralize word when the quantity is 1") {
+                    expect("string" ~ 1) == "string"
+                }
+            }
+
+            it("should allow specifying plural form") {
+                expect(2 ~ "person" / "people") == "2 people"
+            }
+
+            it("should work for optionals") {
+                let nothing: Any?? = nil
+                let string: String?? = "string"
+                let int: Int?? = 2
+                expect(int ~ string) == "2 strings"
+                expect(string ~ int) == "strings"
+                expect(int ~ nothing) == "2"
+                expect(nothing ~ int) == ""
+                expect(nothing ~ string) == "0 strings"
+                expect(string ~ nothing) == "strings"
+                expect(nothing ~ nothing) == ""
+            }
+        }
     }
 }

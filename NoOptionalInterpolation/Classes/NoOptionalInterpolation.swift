@@ -71,44 +71,71 @@ extension Intable where Self: Unwrappable {
 
 extension Optional: Intable {}
 
-public struct Word {
-    var singularForm: String
-    var pluralForm: String
+public protocol Wordable {
+    var singularForm: String { get }
+    var pluralForm: String { get }
 }
 
-extension Word {
-    init(singularForm aSingularForm: String) {
-        singularForm = aSingularForm
-        pluralForm = singularForm + "s"
-    }
+public struct Word: Wordable {
+    public var singularForm: String
+    public var pluralForm: String
 }
 
-extension Word: StringLiteralConvertible {
-    public typealias ExtendedGraphemeClusterLiteralType = StringLiteralType
-    public typealias UnicodeScalarLiteralType = StringLiteralType
+protocol Pluralizer {
+    static func apply(word: String) -> String
+}
 
-    public init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
-        self.init(stringLiteral: value)
-    }
-
-    public init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
-        self.init(stringLiteral: value)
-    }
-
-    public init(stringLiteral value: StringLiteralType) {
-        self.init(singularForm: value)
+class SimplePluralizer: Pluralizer {
+    class func apply(word: String) -> String {
+        return word.characters.count == 0 ? "" : word + "s"
     }
 }
 
-infix operator ~ { precedence 100 }
+extension String: Wordable {
+    public var singularForm: String {
+        get {
+            return self
+        }
+    }
 
-public func ~(amount: Intable, word: Word) -> String {
+    public var pluralForm: String {
+        return SimplePluralizer.apply(self)
+    }
+}
+
+extension Wordable where Self: Unwrappable {
+    public var singularForm: String {
+        get {
+            return "\(self)"
+        }
+    }
+
+    public var pluralForm: String {
+        return SimplePluralizer.apply(self.singularForm)
+    }
+}
+
+extension Optional: Wordable {}
+
+infix operator ~ { precedence 131 }
+
+public func ~(amount: Intable, word: Wordable) -> String {
     let quantity = amount.int()
-    return String(quantity) + " " + (quantity == 1 ? word.singularForm : word.pluralForm)
+    let pluralizedWord = quantity == 1 ? word.singularForm : word.pluralForm
+    return String(quantity) + (pluralizedWord.characters.count == 0 ? "" : " ") + pluralizedWord
 }
 
-public func ~(word: Word, amount: Intable) -> String {
+public func ~(word: Wordable, amount: Intable) -> String {
     return amount.int() == 1 ? word.singularForm : word.pluralForm
+}
+
+public func ~(optional1: Optional<Any>, optional2: Optional<Any>) -> String {
+    let unwrapped1 = optional1.unwrap()
+    let unwrapped2 = optional2.unwrap()
+    if unwrapped1 is Int || unwrapped2 is String {
+        return (unwrapped1 as Intable) ~ (unwrapped2 as Wordable)
+    }
+    return (unwrapped1 as Wordable) ~ (unwrapped2 as Intable)
 }
 
 public func /(singularForm: String, pluralForm: String) -> Word {
