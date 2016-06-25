@@ -83,15 +83,15 @@ let text = "I am \(age ~ "year") old" // "I am 42 years old" // actually not // 
 Use the `/` operator to provide the plural form.
 
 ```swift
-let humanCount = 42
-let text = "The team consists of \(humanCount ~ "person" / "people")" // "The team consists of 42 people"
+let memberCount = 42
+let text = "The team consists of \(memberCount ~ "person" / "people")" // "The team consists of 42 people"
 ```
 
 To omit the quantity, swap the position of the quantity and the word.
 
 ```swift
-let listener = 42
-let text = "Do it \("yourself" / "yourselves" ~ listener)" // "Do it yourselves"
+let listenerCount = 42
+let text = "Do it \("yourself" / "yourselves" ~ listenerCount)" // "Do it yourselves"
 ```
 
 It also works with `Optional`s.
@@ -120,7 +120,7 @@ extension Pluralize: NoOptionalInterpolation.Pluralizer {}
 
 ...
 NoOptionalInterpolation.PluralizerType = Pluralize.self
-assert(2 ~ "oasis" == "2 oases")
+assert(42 ~ "oasis" == "42 oases")
 ```
 
 ## Installation
