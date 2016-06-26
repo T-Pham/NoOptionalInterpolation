@@ -55,7 +55,7 @@ public postfix func *(unwrappable: Unwrappable) -> WrappedUnwrappable {
 
 public extension String {
 
-    /// Create an instance containing the unwrappable's representation.
+    /// Creates an instance containing the unwrappable's representation.
     init(stringInterpolationSegment expr: Unwrappable) {
         if let unwrapped = expr.unwrap() {
             self.init(stringInterpolationSegment: unwrapped)
@@ -81,6 +81,8 @@ extension Int: Intable {
 }
 
 extension Intable where Self: Unwrappable {
+
+    /// Returns the unwrapped value if it is an `Int`. Otherwise, returns `0`.
     public func int() -> Int {
         if let int = self.unwrap() as? Int {
             return int
@@ -158,12 +160,15 @@ extension String: Wordable {
 }
 
 extension Wordable where Self: Unwrappable {
+
+    /// Returns the interpolation presentation of the receiver.
     public var singularForm: String {
         get {
             return "\(self)"
         }
     }
 
+    /// Returns the plural form using the specified `PluralizerType`.
     public var pluralForm: String {
         return PluralizerType.apply(self.singularForm)
     }
@@ -189,8 +194,8 @@ public func ~(amount: Intable, word: Wordable) -> String {
 /**
  Returns a pluralized string for the given `amount` and `word`, omitting the quantity.
 
- - Parameter amount: the amount.
  - Parameter word: the word.
+ - Parameter amount: the amount.
  - Returns: the pluralized string for the given parameters, omitting the quantity.
  */
 public func ~(word: Wordable, amount: Intable) -> String {
