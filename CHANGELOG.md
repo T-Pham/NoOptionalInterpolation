@@ -24,3 +24,6 @@ Add tvOS specification
 
 # v2.0.0
 Add pluralization
+
+# v2.0.1
+Add documentation
