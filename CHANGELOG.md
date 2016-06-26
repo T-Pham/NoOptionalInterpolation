@@ -27,3 +27,6 @@ Add pluralization
 
 # v2.0.1
 Add documentation
+
+# v2.0.2
+Revise the documentation
