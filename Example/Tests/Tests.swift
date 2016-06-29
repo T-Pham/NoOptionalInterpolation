@@ -16,6 +16,7 @@ extension Pluralize: Pluralizer {}
 class Tests: QuickSpec {
 
     override func spec() {
+
         describe("String Interpolation") {
 
             it("should omit the optional text") {
@@ -43,6 +44,7 @@ class Tests: QuickSpec {
         }
 
         describe("* Operator") {
+
             it("should NOT omit the optional text") {
                 let optionalString: String? = "string1"
                 expect("\(optionalString*)") == "Optional(\"string1\")"
@@ -68,7 +70,9 @@ class Tests: QuickSpec {
         }
 
         describe("Pluralization") {
+
             context("with quantity") {
+
                 it("should pluralize word") {
                     expect(2 ~ "string") == "2 strings"
                 }
@@ -79,6 +83,7 @@ class Tests: QuickSpec {
             }
 
             context("without quantity") {
+
                 it("should pluralize word") {
                     expect("string" ~ 2) == "strings"
                 }

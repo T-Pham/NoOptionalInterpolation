@@ -94,7 +94,6 @@ extension Intable where Self: Unwrappable {
 
 extension Optional: Intable {}
 
-
 /// Anything that can present a word.
 public protocol Wordable {
 
