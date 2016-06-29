@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B99031C1CFDA4A800E3BB19 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1B99031B1CFDA4A800E3BB19 /* .gitignore */; };
-		1B99031E1CFDA4B300E3BB19 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1B99031D1CFDA4B300E3BB19 /* .travis.yml */; };
 		5E421B14BC0FCF9FBE7261E5 /* Pods_NoOptionalInterpolation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2303DA2070DB7C4030871D33 /* Pods_NoOptionalInterpolation_Tests.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
@@ -168,8 +166,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B99031E1CFDA4B300E3BB19 /* .travis.yml in Resources */,
-				1B99031C1CFDA4A800E3BB19 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
