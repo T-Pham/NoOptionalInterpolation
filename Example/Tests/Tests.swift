@@ -11,8 +11,6 @@ import Nimble
 import NoOptionalInterpolation
 import Pluralize_swift
 
-import XCTest
-
 extension Pluralize: Pluralizer {}
 
 class Tests: QuickSpec {
