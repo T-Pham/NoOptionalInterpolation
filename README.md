@@ -33,6 +33,7 @@
 [![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
 [![CocoaPods](https://img.shields.io/cocoapods/dt/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
 [![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)](http://cocoapods.org/pods/NoOptionalInterpolation)
+[![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/NoOptionalInterpolation.svg?style=flat-square)](http://cocoadocs.org/docsets/NoOptionalInterpolation)
 [![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat-square)](LICENSE)
 
 ## Description
