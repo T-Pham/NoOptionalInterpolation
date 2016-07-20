@@ -30,3 +30,6 @@ Add documentation
 
 # v2.0.2
 Revise the documentation
+
+# v2.0.3
+Support Carthage
