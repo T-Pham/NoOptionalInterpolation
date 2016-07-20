@@ -127,7 +127,7 @@ assert(42 ~ "oasis" == "42 oases")
 
 ## Installation
 
-### [CocoaPods](http://cocoapods.org/pods/NoOptionalInterpolation)
+### [CocoaPods](https://cocoapods.org/pods/NoOptionalInterpolation)
 
 Add the line below to your Podfile:
 
