@@ -39,9 +39,9 @@
 
 ## Description
 
-NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this pod ensures that the text you set never ever includes that annoying additional "Optional(...)". You can also revert to the default behavior when needed.
+NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation. This is particularly helpful when you set text to UI elements such as `UILabel` or `UIButton`. Since XCode currently, as of the time this is written, does not show any warnings when interpolating `Optional`s, and you might sometimes need to change your variables' type between `Optional` and non-`Optional`, this library ensures that the text you set never ever includes that annoying additional "Optional(...)". You can also revert to the default behavior when needed.
 
-Besides, the pod makes pluralizing your text easier with custom operators.
+Besides, the library makes pluralizing your text easier with custom operators.
 
 ## Usage
 
@@ -127,30 +127,39 @@ assert(42 ~ "oasis" == "42 oases")
 
 ## Installation
 
-NoOptionalInterpolation is available through [CocoaPods](http://cocoapods.org/pods/NoOptionalInterpolation). To install
-it, simply add the following line to your Podfile:
+### [CocoaPods](http://cocoapods.org/pods/NoOptionalInterpolation)
+
+Add the line below to your Podfile:
 
 ```ruby
 pod 'NoOptionalInterpolation'
 ```
 
-If you want NoOptionalInterpolation to be imported to the whole project, add the following line to your project's Bridging-Header.h file:
+### [Carthage](https://github.com/Carthage/Carthage)
 
-```objective-c
-@import NoOptionalInterpolation;
+Add the line below to your Cartfile:
+
+```ruby
+github "T-Pham/NoOptionalInterpolation"
 ```
 
-In case you want to limit the affect of NoOptionalInterpolation within some specific Swift files only, add the line below instead, to the Swift files you want NoOptionalInterpolation to have affect on:
+### [Manually](https://google.com)
 
-```swift
-import NoOptionalInterpolation
-```
+Add all the files in `NoOptionalInterpolation/NoOptionalInterpolation/Classes/` to your project. You are all set.
 
 ##Compatibility
 From version 1.0.0, Swift 2 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
 
+Podfile
+
 ```ruby
 pod 'NoOptionalInterpolation', '~> 0.3'
+```
+
+or Cartfile
+
+```ruby
+github "T-Pham/NoOptionalInterpolation" ~> 0.3
 ```
 
 ## License
