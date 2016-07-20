@@ -33,3 +33,6 @@ Revise the documentation
 
 # v2.0.3
 Support Carthage
+
+# v2.0.4
+Support iOS 8 for Carthage
