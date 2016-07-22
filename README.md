@@ -30,12 +30,16 @@
 [![CI Status](https://img.shields.io/travis/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
 [![GitHub issues](https://img.shields.io/github/issues/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://github.com/T-Pham/NoOptionalInterpolation/issues)
 [![Codecov](https://img.shields.io/codecov/c/github/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://codecov.io/gh/T-Pham/NoOptionalInterpolation)
-[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
-[![Version](https://img.shields.io/cocoapods/v/NoOptionalInterpolation.svg?style=flat-square)](https://cocoapods.org/pods/NoOptionalInterpolation)
-[![CocoaPods](https://img.shields.io/cocoapods/dt/NoOptionalInterpolation.svg?style=flat-square)](https://cocoapods.org/pods/NoOptionalInterpolation)
-[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)](https://cocoapods.org/pods/NoOptionalInterpolation)
 [![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/NoOptionalInterpolation.svg?style=flat-square)](http://cocoadocs.org/docsets/NoOptionalInterpolation)
+
+[![GitHub release](https://img.shields.io/github/tag/T-Pham/NoOptionalInterpolation.svg?style=flat-square&label=Release)](https://github.com/T-Pham/NoOptionalInterpolation/releases)
+![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)
 [![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat-square)](LICENSE)
+
+[![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
+
+[![CocoaPods](https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat-square)](https://cocoapods.org/pods/NoOptionalInterpolation)
+[![CocoaPods downloads](https://img.shields.io/cocoapods/dt/NoOptionalInterpolation.svg?style=flat-square)](https://cocoapods.org/pods/NoOptionalInterpolation)
 
 ## Description
 
@@ -165,3 +169,4 @@ github "T-Pham/NoOptionalInterpolation" ~> 0.3
 ## License
 
 NoOptionalInterpolation is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
+
