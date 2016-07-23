@@ -33,7 +33,7 @@
 [![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/NoOptionalInterpolation.svg?style=flat-square)](http://cocoadocs.org/docsets/NoOptionalInterpolation)
 
 [![GitHub release](https://img.shields.io/github/tag/T-Pham/NoOptionalInterpolation.svg?style=flat-square&label=release)](https://github.com/T-Pham/NoOptionalInterpolation/releases)
-[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)]()
+[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)](https://github.com/T-Pham/NoOptionalInterpolation)
 [![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat-square)](LICENSE)
 
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
@@ -169,4 +169,3 @@ github "T-Pham/NoOptionalInterpolation" ~> 0.3
 ## License
 
 NoOptionalInterpolation is available under the MIT license. See the [LICENSE](LICENSE) file for more info.
-
