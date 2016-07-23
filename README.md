@@ -32,8 +32,8 @@
 [![Codecov](https://img.shields.io/codecov/c/github/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://codecov.io/gh/T-Pham/NoOptionalInterpolation)
 [![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/NoOptionalInterpolation.svg?style=flat-square)](http://cocoadocs.org/docsets/NoOptionalInterpolation)
 
-[![GitHub release](https://img.shields.io/github/tag/T-Pham/NoOptionalInterpolation.svg?style=flat-square&label=Release)](https://github.com/T-Pham/NoOptionalInterpolation/releases)
-![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)
+[![GitHub release](https://img.shields.io/github/tag/T-Pham/NoOptionalInterpolation.svg?style=flat-square&label=release)](https://github.com/T-Pham/NoOptionalInterpolation/releases)
+[![Platform](https://img.shields.io/cocoapods/p/NoOptionalInterpolation.svg?style=flat-square)]()
 [![License](https://img.shields.io/cocoapods/l/NoOptionalInterpolation.svg?style=flat-square)](LICENSE)
 
 [![Carthage](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
