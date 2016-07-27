@@ -27,7 +27,7 @@
 
 # NoOptionalInterpolation
 
-[![CI Status](https://img.shields.io/travis/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
+[![CI Status](https://img.shields.io/travis/T-Pham/NoOptionalInterpolation/master.svg?style=flat-square)](https://travis-ci.org/T-Pham/NoOptionalInterpolation)
 [![GitHub issues](https://img.shields.io/github/issues/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://github.com/T-Pham/NoOptionalInterpolation/issues)
 [![Codecov](https://img.shields.io/codecov/c/github/T-Pham/NoOptionalInterpolation.svg?style=flat-square)](https://codecov.io/gh/T-Pham/NoOptionalInterpolation)
 [![Documentation](https://img.shields.io/cocoapods/metrics/doc-percent/NoOptionalInterpolation.svg?style=flat-square)](http://cocoadocs.org/docsets/NoOptionalInterpolation)
