@@ -131,20 +131,20 @@ assert(42 ~ "oasis" == "42 oases")
 
 ## Installation
 
-### [CocoaPods](https://cocoapods.org/pods/NoOptionalInterpolation)
-
-Add the line below to your Podfile:
-
-```ruby
-pod 'NoOptionalInterpolation'
-```
-
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 Add the line below to your Cartfile:
 
 ```ruby
 github "T-Pham/NoOptionalInterpolation"
+```
+
+### [CocoaPods](https://cocoapods.org/pods/NoOptionalInterpolation)
+
+Add the line below to your Podfile:
+
+```ruby
+pod 'NoOptionalInterpolation'
 ```
 
 ### [Manually](https://google.com)
