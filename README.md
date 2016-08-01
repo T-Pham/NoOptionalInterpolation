@@ -149,7 +149,7 @@ pod 'NoOptionalInterpolation'
 
 ### [Manually](https://google.com)
 
-Add all the files in `NoOptionalInterpolation/NoOptionalInterpolation/Classes/` to your project. You are all set.
+Add all the files in [`/NoOptionalInterpolation/Classes/`](/NoOptionalInterpolation/Classes/) to your project. You are all set.
 
 ##Compatibility
 From version 1.0.0, Swift 2 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
