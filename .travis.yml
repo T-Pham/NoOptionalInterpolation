@@ -4,6 +4,7 @@ cache: cocoapods
 podfile: Example/Podfile
 before_install:
 - gem install cocoapods --no-document
+- pod repo update
 - pod install --project-directory=Example
 script:
 - xcodebuild -scheme NoOptionalInterpolation-Example -workspace Example/NoOptionalInterpolation.xcworkspace -sdk iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.3' build test | xcpretty

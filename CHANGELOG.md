@@ -36,3 +36,6 @@ Support Carthage
 
 # v2.0.4
 Support iOS 8 for Carthage
+
+# v2.0.5
+Correct some metadata
