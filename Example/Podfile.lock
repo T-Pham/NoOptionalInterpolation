@@ -1,6 +1,6 @@
 PODS:
   - Nimble (3.2.0)
-  - NoOptionalInterpolation (2.0.5)
+  - NoOptionalInterpolation (2.0.6)
   - Pluralize.swift (1.0)
   - Quick (0.9.3)
 
@@ -23,7 +23,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  NoOptionalInterpolation: c41be546f129b653c56dd1ee4a2971e5c4d504cf
+  NoOptionalInterpolation: ce223e13300100795a2ed5b430e7c49c1bd248b3
   Pluralize.swift: 39197053939578ca42c3034081d2887016ce5a33
   Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
 

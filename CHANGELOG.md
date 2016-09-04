@@ -39,3 +39,6 @@ Support iOS 8 for Carthage
 
 # v2.0.5
 Correct some metadata
+
+# v2.0.6
+Update swift package
