@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B5291DE1D7BF02800BAE977 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5291DD1D7BF02800BAE977 /* Package.swift */; };
 		5E421B14BC0FCF9FBE7261E5 /* Pods_NoOptionalInterpolation_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2303DA2070DB7C4030871D33 /* Pods_NoOptionalInterpolation_Tests.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07B9CDA06EF0325E2B8FD00D /* Pods-NoOptionalInterpolation_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NoOptionalInterpolation_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NoOptionalInterpolation_Tests/Pods-NoOptionalInterpolation_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		1B5291DD1D7BF02800BAE977 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../Package.swift; sourceTree = "<group>"; };
 		1B99031B1CFDA4A800E3BB19 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		1B99031D1CFDA4B300E3BB19 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		1B99031F1CFDAC2000E3BB19 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
@@ -43,6 +45,7 @@
 			children = (
 				1B99031D1CFDA4B300E3BB19 /* .travis.yml */,
 				1B99031B1CFDA4A800E3BB19 /* .gitignore */,
+				1B5291DD1D7BF02800BAE977 /* Package.swift */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B5291DE1D7BF02800BAE977 /* Package.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
