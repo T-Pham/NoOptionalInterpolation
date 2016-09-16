@@ -41,7 +41,7 @@ extension WrappedUnwrappable: Unwrappable {
     }
 }
 
-postfix operator * {}
+postfix operator *
 
 /**
  Wraps an `Unwrappable` to prevent it from being unwrapped.
@@ -123,11 +123,11 @@ public protocol Pluralizer {
      - Parameter word: the given word, in singular form.
      - Returns: the plural form.
      */
-    static func apply(word: String) -> String
+    static func apply(_ word: String) -> String
 }
 
 /// `SimplePluralizer` appends an "s" to a word to make its plural form.
-public class SimplePluralizer: Pluralizer {
+open class SimplePluralizer: Pluralizer {
 
     /**
      Returns the plural form of the given word by appending an "s".
@@ -135,7 +135,7 @@ public class SimplePluralizer: Pluralizer {
      - Parameter word: the given word, in singular form.
      - Returns: the plural form.
      */
-    public class func apply(word: String) -> String {
+    open class func apply(_ word: String) -> String {
         return word.characters.count == 0 ? "" : word + "s"
     }
 }
@@ -175,7 +175,12 @@ extension Wordable where Self: Unwrappable {
 
 extension Optional: Wordable {}
 
-infix operator ~ { precedence 131 }
+precedencegroup PluralizationPrecedence {
+    higherThan: ComparisonPrecedence
+    lowerThan: CastingPrecedence
+}
+
+infix operator ~: PluralizationPrecedence
 
 /**
  Returns a pluralized string for the given `amount` and `word`.

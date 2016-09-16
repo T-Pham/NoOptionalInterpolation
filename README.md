@@ -116,6 +116,8 @@ In your Podfile:
 pod 'Pluralize.swift', :git => "https://github.com/joshualat/Pluralize.swift.git"
 ```
 
+NOTE: `Pluralize.swift` pod is not yet compatible with Swift 3.
+
 Then:
 
 ```swift
@@ -152,18 +154,18 @@ pod 'NoOptionalInterpolation'
 Add all the files in [`/NoOptionalInterpolation/Classes/`](/NoOptionalInterpolation/Classes/) to your project. You are all set.
 
 ##Compatibility
-From version 1.0.0, Swift 2 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 1.0.0.
+From version 3.0.0, Swift 3 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 3.0.0.
 
 Podfile
 
 ```ruby
-pod 'NoOptionalInterpolation', '~> 0.3'
+pod 'NoOptionalInterpolation', '~> 2.0.6'
 ```
 
 or Cartfile
 
 ```ruby
-github "T-Pham/NoOptionalInterpolation" ~> 0.3
+github "T-Pham/NoOptionalInterpolation" ~> 2.0.6
 ```
 
 ## License

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NoOptionalInterpolation'
-  s.version          = '2.0.6'
+  s.version          = '3.0.0'
   s.summary          = 'Get rid of "Optional(...)" and "nil" in string interpolation. Easy pluralization.'
   s.description      = <<-DESC
 NoOptionalInterpolation gets rid of "Optional(...)" and "nil" in Swift's string interpolation and provides an easy way to pluralize your text.

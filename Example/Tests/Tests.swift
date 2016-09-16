@@ -7,11 +7,7 @@
 //
 
 import Quick
-import Nimble
 import NoOptionalInterpolation
-import Pluralize_swift
-
-extension Pluralize: Pluralizer {}
 
 class Tests: QuickSpec {
 
@@ -21,17 +17,17 @@ class Tests: QuickSpec {
 
             it("should omit the optional text") {
                 let optionalString: String? = "string1"
-                expect("\(optionalString)") == optionalString!
+                XCTAssertEqual("\(optionalString)", optionalString!)
             }
 
             it("should omit the nil text") {
                 let optionalString: String? = nil
-                expect("\(optionalString)") == ""
+                XCTAssertEqual("\(optionalString)", "")
             }
 
             it("should work for nested optional") {
                 let nestedOptionalString: String?? = "string2"
-                expect("\(nestedOptionalString)") == nestedOptionalString!!
+                XCTAssertEqual("\(nestedOptionalString)", nestedOptionalString!!)
             }
 
             it("should work for the example") {
@@ -39,7 +35,7 @@ class Tests: QuickSpec {
                 let t: String? = nil
                 let s: String? = "string1"
                 let o: String?? = "string2"
-                expect("\(n) \(t) \(s) \(o)") == "1  string1 string2"
+                XCTAssertEqual("\(n) \(t) \(s) \(o)", "1  string1 string2")
             }
         }
 
@@ -47,17 +43,17 @@ class Tests: QuickSpec {
 
             it("should NOT omit the optional text") {
                 let optionalString: String? = "string1"
-                expect("\(optionalString*)") == "Optional(\"string1\")"
+                XCTAssertEqual("\(optionalString*)", "Optional(\"string1\")")
             }
 
             it("should NOT omit the nil text") {
                 let optionalString: String? = nil
-                expect("\(optionalString*)") == "nil"
+                XCTAssertEqual("\(optionalString*)", "nil")
             }
 
             it("should work for nested optional") {
                 let nestedOptionalString: String?? = "string2"
-                expect("\(nestedOptionalString*)") == "Optional(Optional(\"string2\"))"
+                XCTAssertEqual("\(nestedOptionalString*)", "Optional(Optional(\"string2\"))")
             }
 
             it("should work for the example") {
@@ -65,7 +61,7 @@ class Tests: QuickSpec {
                 let t: String? = nil
                 let s: String? = "string1"
                 let o: String?? = "string2"
-                expect("\(n*) \(t*) \(s*) \(o*)") == "Optional(1) nil Optional(\"string1\") Optional(Optional(\"string2\"))"
+                XCTAssertEqual("\(n*) \(t*) \(s*) \(o*)", "Optional(1) nil Optional(\"string1\") Optional(Optional(\"string2\"))")
             }
         }
 
@@ -74,46 +70,40 @@ class Tests: QuickSpec {
             context("with quantity") {
 
                 it("should pluralize word") {
-                    expect(2 ~ "string") == "2 strings"
+                    XCTAssertEqual(2 ~ "string", "2 strings")
                 }
 
                 it("should NOT pluralize word when the quantity is 1") {
-                    expect(1 ~ "string") == "1 string"
+                    XCTAssertEqual(1 ~ "string", "1 string")
                 }
             }
 
             context("without quantity") {
 
                 it("should pluralize word") {
-                    expect("string" ~ 2) == "strings"
+                    XCTAssertEqual("string" ~ 2, "strings")
                 }
 
                 it("should NOT pluralize word when the quantity is 1") {
-                    expect("string" ~ 1) == "string"
+                    XCTAssertEqual("string" ~ 1, "string")
                 }
             }
 
             it("should allow specifying plural form") {
-                expect(2 ~ "person" / "people") == "2 people"
+                XCTAssertEqual(2 ~ "person" / "people", "2 people")
             }
 
             it("should work for optionals") {
                 let nothing: Any?? = nil
                 let string: String?? = "string"
                 let int: Int?? = 2
-                expect(int ~ string) == "2 strings"
-                expect(string ~ int) == "strings"
-                expect(int ~ nothing) == "2"
-                expect(nothing ~ int) == ""
-                expect(nothing ~ string) == "0 strings"
-                expect(string ~ nothing) == "strings"
-                expect(nothing ~ nothing) == ""
-            }
-
-            it("should support custom pluralizer") {
-                PluralizerType = Pluralize.self
-                expect(2 ~ "oasis") == "2 oases"
-                PluralizerType = SimplePluralizer.self
+                XCTAssertEqual(int ~ string, "2 strings")
+                XCTAssertEqual(string ~ int, "strings")
+                XCTAssertEqual(int ~ nothing, "2")
+                XCTAssertEqual(nothing ~ int, "")
+                XCTAssertEqual(nothing ~ string, "0 strings")
+                XCTAssertEqual(string ~ nothing, "strings")
+                XCTAssertEqual(nothing ~ nothing, "")
             }
         }
     }

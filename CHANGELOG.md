@@ -42,3 +42,6 @@ Correct some metadata
 
 # v2.0.6
 Update swift package
+
+# v3.0.0
+Upgrade to Swift 3
