@@ -3,11 +3,11 @@ language: objective-c
 cache: cocoapods
 podfile: Example/Podfile
 before_install:
-- gem install cocoapods --no-document
+- gem install cocoapods --pre --no-document
 - pod repo update
 - pod install --project-directory=Example
 script:
-- xcodebuild -scheme NoOptionalInterpolation-Example -workspace Example/NoOptionalInterpolation.xcworkspace -sdk iphonesimulator9.3 -destination 'platform=iOS Simulator,name=iPhone 6S,OS=9.3' build test | xcpretty
+- xcodebuild -scheme NoOptionalInterpolation-Example -workspace Example/NoOptionalInterpolation.xcworkspace -sdk iphonesimulator10.0 -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0' build test | xcpretty
 - pod lib lint
 after_success:
 - bash <(curl -s https://codecov.io/bash) -J 'NoOptionalInterpolation'
