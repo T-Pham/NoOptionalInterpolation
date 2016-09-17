@@ -153,7 +153,7 @@ pod 'NoOptionalInterpolation'
 
 Add all the files in [`/NoOptionalInterpolation/Classes/`](/NoOptionalInterpolation/Classes/) to your project. You are all set.
 
-##Compatibility
+## Compatibility
 From version 3.0.0, Swift 3 syntax is used. If your project is still using earlier versions of Swift, please use a NoOptionalInterpolation version prior to 3.0.0.
 
 Podfile
