@@ -63,10 +63,18 @@ public extension String {
             self.init()
         }
     }
+
+    init<T>(stringInterpolationSegment expr: Optional<T>) {
+        self.init(stringInterpolationSegment: expr as Unwrappable)
+    }
+
+    init(stringInterpolationSegment expr: WrappedUnwrappable) {
+        self.init(stringInterpolationSegment: expr as Unwrappable)
+    }
 }
 
 /// Anything that can present an `Int`.
-public protocol Intable {
+protocol Intable {
 
     /// Returns `Int` value of the receiver.
     func int() -> Int
@@ -75,7 +83,7 @@ public protocol Intable {
 extension Int: Intable {
 
     /// Returns self.
-    public func int() -> Int {
+    func int() -> Int {
         return self
     }
 }
@@ -83,7 +91,7 @@ extension Int: Intable {
 extension Intable where Self: Unwrappable {
 
     /// Returns the unwrapped value if it is an `Int`. Otherwise, returns `0`.
-    public func int() -> Int {
+    func int() -> Int {
         if let int = self.unwrap() as? Int {
             return int
         } else {
@@ -95,7 +103,7 @@ extension Intable where Self: Unwrappable {
 extension Optional: Intable {}
 
 /// Anything that can present a word.
-public protocol Wordable {
+protocol Wordable {
 
     /// The singular form of the word.
     var singularForm: String { get }
@@ -161,14 +169,14 @@ extension String: Wordable {
 extension Wordable where Self: Unwrappable {
 
     /// Returns the interpolation presentation of the receiver.
-    public var singularForm: String {
+    var singularForm: String {
         get {
-            return "\(self)"
+            return "\(self as Unwrappable)"
         }
     }
 
     /// Returns the plural form using the specified `PluralizerType`.
-    public var pluralForm: String {
+    var pluralForm: String {
         return PluralizerType.apply(self.singularForm)
     }
 }
@@ -182,6 +190,12 @@ precedencegroup PluralizationPrecedence {
 
 infix operator ~: PluralizationPrecedence
 
+func ~(amount: Intable, word: Wordable) -> String {
+    let quantity = amount.int()
+    let pluralizedWord = quantity == 1 ? word.singularForm : word.pluralForm
+    return String(quantity) + (pluralizedWord.characters.count == 0 ? "" : " ") + pluralizedWord
+}
+
 /**
  Returns a pluralized string for the given `amount` and `word`.
 
@@ -189,10 +203,23 @@ infix operator ~: PluralizationPrecedence
  - Parameter word: the word.
  - Returns: the pluralized string for the given parameters.
  */
-public func ~(amount: Intable, word: Wordable) -> String {
-    let quantity = amount.int()
-    let pluralizedWord = quantity == 1 ? word.singularForm : word.pluralForm
-    return String(quantity) + (pluralizedWord.characters.count == 0 ? "" : " ") + pluralizedWord
+public func ~(amount: Int, word: String) -> String {
+    return amount as Intable ~ word as Wordable
+}
+
+/**
+ Returns a pluralized string for the given `amount` and `word`.
+
+ - Parameter amount: the amount.
+ - Parameter word: the word.
+ - Returns: the pluralized string for the given parameters.
+ */
+public func ~(amount: Int, word: Word) -> String {
+    return amount as Intable ~ word as Wordable
+}
+
+func ~(word: Wordable, amount: Intable) -> String {
+    return amount.int() == 1 ? word.singularForm : word.pluralForm
 }
 
 /**
@@ -202,8 +229,19 @@ public func ~(amount: Intable, word: Wordable) -> String {
  - Parameter amount: the amount.
  - Returns: the pluralized string for the given parameters, omitting the quantity.
  */
-public func ~(word: Wordable, amount: Intable) -> String {
-    return amount.int() == 1 ? word.singularForm : word.pluralForm
+public func ~(word: String, amount: Int) -> String {
+    return word as Wordable ~ amount as Intable
+}
+
+/**
+ Returns a pluralized string for the given `amount` and `word`, omitting the quantity.
+
+ - Parameter word: the word.
+ - Parameter amount: the amount.
+ - Returns: the pluralized string for the given parameters, omitting the quantity.
+ */
+public func ~(word: Word, amount: Int) -> String {
+    return word as Wordable ~ amount as Intable
 }
 
 /**
@@ -213,7 +251,7 @@ public func ~(word: Wordable, amount: Intable) -> String {
  - Parameter optional2: the remaining parameter.
  - Returns: the pluralized string for the given parameters, the quantity could be ommited depending on the order of the parameters.
  */
-public func ~(optional1: Optional<Any>, optional2: Optional<Any>) -> String {
+public func ~(optional1: Unwrappable, optional2: Unwrappable) -> String {
     let unwrapped1 = optional1.unwrap()
     let unwrapped2 = optional2.unwrap()
     if unwrapped1 is Int || unwrapped2 is String {
