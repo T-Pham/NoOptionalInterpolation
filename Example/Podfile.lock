@@ -1,5 +1,5 @@
 PODS:
-  - NoOptionalInterpolation (3.0.0)
+  - NoOptionalInterpolation (4.0.0)
   - Quick (1.2.0)
 
 DEPENDENCIES:
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NoOptionalInterpolation: 8c097a626298c3cd93422b2be54e1c85237deade
+  NoOptionalInterpolation: 7749f1f34e5186087c53c34f4e5bb27db67ebb37
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
 PODFILE CHECKSUM: 6962e8f0ba60645520cec30e30332241c0c335cd

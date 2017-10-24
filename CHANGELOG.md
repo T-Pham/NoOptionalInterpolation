@@ -45,3 +45,6 @@ Update swift package
 
 # v3.0.0
 Upgrade to Swift 3
+
+# v4.0.0
+Upgrade to Swift 4
